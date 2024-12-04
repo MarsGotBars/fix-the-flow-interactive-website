@@ -129,8 +129,7 @@ form {
       place-content: center;
     }
   }
-  span,
-  summary {
+  span {
     border-right: 1px solid var(--black);
     padding: 14px 16px;
     height: 100%;
@@ -142,7 +141,7 @@ form {
     position: relative;
 
     /* Only apply the ::after when the element is NOT inside a <details> */
-    &:not(details) {
+    &:not(> details) {
       &::after {
         content: "";
         background: var(--black);
@@ -576,7 +575,7 @@ p:has(time) {
   }
 }
 
-time{
+time {
   text-transform: uppercase;
   font-family: var(--secondary-font);
 }

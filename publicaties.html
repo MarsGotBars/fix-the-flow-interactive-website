@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/general.css" />
     <link rel="stylesheet" href="./styles/components/filters.css" />
+    <link rel="stylesheet" href="./styles/components/cards-block.css">
+    <link rel="stylesheet" href="./styles/offline.css">
     <link
       rel="preload"
       href="https://julesbruins.github.io/look-and-feel-styleguide/dda-gezamenlijk.css"
@@ -72,28 +74,59 @@
         <section class="content-block">
           <h1 class="xxxl">Publicaties</h1>
         </section>
+        <div class="cards-block">
+          <article>
+            <img src="./assets/images/cards1.jpg" alt="" />
+            <div>
+              <p class="label">algemeen</p>
+              <time datetime="2024-01-01">01 jan 2024</time>
+              <h3 class="lg">
+                Digitale Euro in de strijd tegen digitale exlcusie?
+              </h3>
+              <div>
+                <a href="" class="link">
+                  meer lezen
+                  <div class="blue"></div>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <img src="./assets/images/cards2.jpg" alt="" />
+            <div>
+              <p class="label">DDAforgood</p>
+              <time datetime="2024-01-01">01 jan 2024</time>
+              <h3 class="lg">
+                Digital design for good: drie gamechangers over hoe zij digital
+                inzetten voor een betere wereld
+              </h3>
+              <div>
+                <a href="" class="link">
+                  meer lezen
+                  <div class="blue"></div>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <img src="./assets/images/cards3.jpg" alt="" />
+            <div>
+              <p class="label">digitale inclusie</p>
+              <time datetime="2024-01-01">01 jan 2024</time>
+              <h3 class="lg">
+                De digitale overheid in 2024: veel voornemens, grote opgaven
+              </h3>
+              <div>
+                <a href="" class="link">
+                  meer lezen
+                  <div class="blue"></div>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
         <form>
           <details class="btn" name="filter">
-            <summary>
-              onderwerp(multiple)
-            </summary>
-            <div>
-              <label>
-                optie 1
-                <input type="checkbox" />
-              </label>
-              <label>
-                optie 2
-                <input type="checkbox" />
-              </label>
-              <label>
-                optie 3
-                <input type="checkbox" />
-              </label>
-            </div>
-          </details>
-          <details class="btn" name="filter">
-            <div></div>
             <summary>datum</summary>
             <div>
               <input name="date" id="optie1" type="radio" /><label for="optie1"
@@ -104,6 +137,32 @@
               >
               <input name="date" id="optie3" type="radio" /><label for="optie3"
                 >optie 3</label
+              >
+              <input name="date" id="optie3" type="radio" /><label for="optie3"
+                >grote lange optie 4</label
+              >
+              <input name="date" id="optie3" type="radio" /><label for="optie3"
+                >nieuwbouwkeuken inzetten</label
+              >
+            </div>
+          </details>
+          <details class="btn" name="filter">
+            <summary>onderwerp</summary>
+            <div>
+              <input name="date" id="optie1" type="radio" /><label for="optie1"
+                >optie 1</label
+              >
+              <input name="date" id="optie2" type="radio" /><label for="optie2"
+                >optie 2</label
+              >
+              <input name="date" id="optie3" type="radio" /><label for="optie3"
+                >optie 3</label
+              >
+              <input name="date" id="optie3" type="radio" /><label for="optie3"
+                >grote lange optie 4</label
+              >
+              <input name="date" id="optie3" type="radio" /><label for="optie3"
+                >nieuwbouwkeuken inzetten</label
               >
             </div>
           </details>
