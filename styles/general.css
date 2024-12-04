@@ -129,8 +129,7 @@ form {
       place-content: center;
     }
   }
-  span,
-  summary {
+  span{
     border-right: 1px solid var(--black);
     padding: 14px 16px;
     height: 100%;
