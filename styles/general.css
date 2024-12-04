@@ -1,0 +1,591 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* multi page transition */
+@view-transition {
+  navigation: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  --linear-slider: 10s linear infinite;
+  display: flex;
+  justify-content: center;
+  min-height: 200vh;
+}
+
+.overlay {
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.3s ease 0.1s;
+  &.open {
+    background: rgba(0, 0, 0, 0.25);
+  }
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+  position: relative;
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  svg > path {
+    stroke: var(--blue);
+  }
+}
+/*! .arrow {
+  max-width: 1rem;
+  max-height: 1rem;
+} */
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-weight: 700;
+  gap: 0.5rem;
+  div {
+    height: 18px;
+    aspect-ratio: 1;
+    &::after {
+      content: "";
+      background: var(--black);
+      position: absolute;
+      display: grid;
+      place-self: center;
+      mask: url(../assets/icons/arrow-right.svg) center/contain no-repeat;
+      height: 18px;
+      aspect-ratio: 1;
+    }
+    &.blue {
+      &::after {
+        background-color: var(--blue);
+      }
+    }
+  }
+}
+
+.outgoing {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-weight: 700;
+  gap: 0.5rem;
+  div {
+    height: 18px;
+    aspect-ratio: 1;
+    &::after {
+      content: "";
+      background: var(--black);
+      position: absolute;
+      display: grid;
+      place-self: center;
+      mask: url(../assets/icons/arrow-outgoing.svg) center/contain no-repeat;
+      height: 18px;
+      aspect-ratio: 1;
+    }
+    &.blue {
+      &::after {
+        background-color: var(--blue);
+      }
+    }
+  }
+}
+
+form {
+  display: flex;
+}
+
+.btn {
+  align-items: center;
+  background: var(--white);
+  display: flex;
+  height: 48px;
+  color: var(--black);
+  border: 1px solid var(--black);
+  stroke: initial;
+  &:not(details) {
+    > * {
+      display: grid;
+      place-content: center;
+    }
+  }
+  span,
+  summary {
+    border-right: 1px solid var(--black);
+    padding: 14px 16px;
+    height: 100%;
+  }
+  div {
+    height: 100%;
+    width: 48px;
+    height: 48px;
+    position: relative;
+
+    /* Only apply the ::after when the element is NOT inside a <details> */
+    &:not(details) {
+      &::after {
+        content: "";
+        background: var(--black);
+        position: absolute;
+        display: grid;
+        place-self: center;
+        mask: url(../assets/icons/arrow-right.svg) center/contain no-repeat;
+        height: 18px;
+        aspect-ratio: 1;
+      }
+      &.blue {
+        &::after {
+          background-color: var(--blue);
+        }
+      }
+    }
+  }
+
+  p {
+    white-space: nowrap;
+    border-right: 1px solid var(--black);
+    padding: 14px 16px;
+    height: 100%;
+  }
+  cursor: pointer;
+}
+
+/* button animation, now to find a fitting animation for it... */
+a:hover > div > img {
+  transform: translateX(5px);
+}
+
+a:active {
+  background-color: var(--important);
+}
+
+/* content */
+main > * {
+  grid-column: 1 / -1;
+  margin: 48px 0;
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+main {
+  grid-auto-rows: max-content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-content: baseline;
+  padding: 0 16px;
+  margin: 0 auto 16px 0;
+}
+
+/* companies block */
+.companies-block {
+  overflow: hidden;
+  height: fit-content;
+  margin-left: -16px;
+  margin-right: -16px;
+  border: 1px solid var(--black);
+  border-width: 1px 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
+  .group:nth-child(1) {
+    animation: moveLeft var(--linear-slider);
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+  .group:nth-child(2) {
+    transform: translateX(-50%);
+    animation: moveRight var(--linear-slider);
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+  > div {
+    flex-wrap: wrap;
+  }
+  div {
+    display: flex;
+    /* md+ screen */
+    img {
+      aspect-ratio: 1;
+      min-width: clamp(120px, 15vw, 176px);
+      min-height: clamp(120px, 15vw, 176px);
+      object-fit: cover; /* Cover the entire area, cropping if necessary */
+      display: block; /* Remove bottom whitespace */
+    }
+  }
+}
+@keyframes moveLeft {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes moveRight {
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* end of companies block */
+
+/* content block */
+
+.content-block > * {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.content-block {
+  justify-items: center;
+  gap: 16px 16px;
+  span:nth-child(1) {
+    width: fit-content;
+  }
+  div {
+    flex-direction: column;
+    @media (min-width: 769px) {
+      flex-direction: row;
+    }
+  }
+  > a {
+    margin-top: 1rem;
+  }
+  &:has(h1) {
+    margin-bottom: 8.125rem;
+    > div {
+      margin-top: 1.5rem;
+    }
+  }
+}
+.content-block :not(h1) span:not(a > span) {
+  color: rgba(204, 0, 0, 1);
+}
+.content-block > div:not(:has(h1)) {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* not sure if this is allowed */
+.content-block h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* end of content block */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 -16px 0 0 var(--white);
+}
+header img {
+  min-height: 40px;
+  max-height: 60px;
+  height: 100%;
+}
+
+/* container */
+.container {
+  max-width: 1440px;
+  min-height: calc(100% - 18px);
+  width: 100%;
+  @media (min-width: 769px) {
+    margin: 0 1rem;
+  }
+}
+
+nav {
+  position: relative;
+  height: 80px;
+  padding: 12px 14px;
+  background: var(--white);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--black);
+  position: relative;
+  /* overflow: hidden; */
+  .nav-items {
+    max-width: 360px;
+    width: 100%;
+    z-index: 30;
+    border-top: 1px solid var(--black);
+    padding: 0 24px;
+    background: var(--white);
+    top: 0;
+    height: 100%;
+    right: 0;
+    transform: translateX(100%);
+    position: fixed;
+    transition: 0.3s ease 0.1s;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    ul {
+      padding: 48px 0;
+      &:first-of-type {
+        border-bottom: 1px solid var(--black);
+        > * {
+          margin: 48px 0;
+          &:first-of-type,
+          &:last-of-type {
+            margin: 0;
+          }
+        }
+        a {
+          gap: 0.375rem;
+        }
+      }
+      &:last-of-type > :first-child {
+        margin-bottom: 24px;
+      }
+      li {
+        a {
+          color: var(--black);
+          width: fit-content;
+          align-items: center;
+          display: flex;
+          &.link {
+            font-weight: 400;
+            color: var(--blue);
+            gap: 0.5rem;
+          }
+          &.active {
+            color: var(--blue);
+            font-weight: 700;
+          }
+          span {
+            padding: 0 0.25rem;
+            font-size: 0.75rem;
+            background-color: var(--blue);
+            height: fit-content;
+            line-height: 1rem;
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+  .nav-items.open {
+    transform: translateX(0);
+  }
+  > a:has(:not(img)) {
+    text-align: center;
+    height: 100%;
+    aspect-ratio: 1;
+    z-index: 100;
+    padding: 0.5rem;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--black);
+
+    .lines {
+      background: var(--blue);
+      display: block;
+      background: var(--black);
+      height: 3px;
+      width: 100%;
+      &:nth-child(2) {
+        width: 80%;
+      }
+    }
+  }
+}
+
+section {
+  display: grid;
+  height: fit-content;
+  grid-template-columns: subgrid;
+}
+
+/* md and lg screens */
+@media screen and (min-width: 660px) {
+  /* header | nav */
+
+  header {
+    /* zorgt ervoor dat de content / page layout niet shift */
+    height: 178px; /* md+ */
+    top: 16px;
+    pointer-events: none;
+    > * {
+      pointer-events: all;
+    }
+    /* hide de borders van de main */
+    img {
+      max-height: 80px;
+    }
+  }
+
+  nav {
+    padding: 0.75rem 1rem;
+    height: fit-content;
+    border: 1px solid var(--black);
+    .nav-items {
+      display: flex;
+    }
+    top: 0;
+  }
+
+  /* 
+stomme 'hack'
+maar dit zorgt er wel voor dat de scroll header op elke browser werkt :)
+*/
+  header::before,
+  header::after {
+    content: "";
+    background: var(--black);
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    height: 50%;
+    width: 1px;
+  }
+  header::before {
+    left: 0;
+  }
+  header::after {
+    right: 0;
+  }
+
+  nav ul li span {
+    font-weight: 300;
+  }
+  /* end of nav | header */
+
+  .content-block {
+    grid-column: 3 / 11;
+  }
+  .companies-block {
+    margin-left: -48px;
+    margin-right: -48px;
+  }
+
+  main {
+    padding: 0 48px;
+    border: 1px solid var(--black);
+    border-top: none;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    gap: 0 32px;
+  }
+
+  /* md+ nav | header */
+  nav {
+    height: 178px;
+    padding: 48px;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s ease;
+  }
+  nav.scrolled {
+    height: 114px;
+    padding: 16px 48px;
+    border-bottom: 1px solid var(--black);
+  }
+  /* end of md+ nav | header */
+
+  .container {
+    margin: 0px 16px;
+  }
+}
+/* end of md and lg screens */
+/* hamburger menu removal */
+@media screen and (min-width: 1180px) {
+  .overlay.open {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .burger {
+    display: none;
+  }
+
+  nav {
+    color: var(--black);
+    width: 100%;
+    .nav-items {
+      position: initial;
+      max-width: unset;
+      background: initial;
+      flex-direction: row;
+      border: none;
+      transform: unset;
+      ul {
+        padding: 0;
+        height: fit-content;
+        min-height: 48px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: end;
+        align-items: center;
+        gap: clamp(1rem, 2vw, 3rem);
+        &:first-of-type {
+          border: none;
+          text-wrap: nowrap;
+          width: 60%;
+          justify-content: start;
+          margin: 0 clamp(1rem, 2vw, 3rem);
+          gap: clamp(1rem, 2vw, 2rem);
+          width: 100%;
+          > * {
+            margin: initial;
+          }
+        }
+        &:last-of-type > :first-child {
+          margin-bottom: initial;
+        }
+      }
+    }
+    div.open::before {
+      display: none;
+    }
+  }
+}
+
+p:has(time) {
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  time::after {
+    content: "/";
+    padding: 0 0.5rem;
+  }
+}
+
+time{
+  text-transform: uppercase;
+  font-family: var(--secondary-font);
+}
+
+::selection {
+  background-color: var(--important);
+  color: var(--white);
+}
+
+p.label {
+  display: inline-block;
+}

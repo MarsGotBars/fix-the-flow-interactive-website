@@ -1,0 +1,149 @@
+/* Schrijf hier de verschillende stijlen, die gedeeld gaan
+   worden door jullie projecten */
+   @font-face {
+    font-family: "Archivo";
+    src: url(../fonts/Archivo-VariableFont.woff2) format("woff2");
+  }
+  
+  @font-face {
+    font-family: "Martian Mono";
+    src: url(../fonts/MartianMono-VariableFont.woff2) format("woff2");
+  }
+  
+  body {
+    --primary-font: "Archivo", verdana;
+    --secondary-font: "Martian Mono", sans-serif;
+    --white: #ffffff;
+    --black: #000000;
+    --grey: #666666;
+    --blue: #364bf7;
+    --important: #f7e19f;
+    --letter-spacing: -0.04em; /* -4% van de font size */
+  
+    /* spacing */
+    --size-xs: 0.5rem;
+    --size-sm: 1rem;
+    --size-md: 2rem;
+    --size-lg: 3rem;
+    --size-xl: 4rem;
+    --size-xxl: 6rem;
+  
+    /* default */
+    background: var(--white);
+    font-family: var(--primary-font);
+  }
+  
+  /* Typografie */
+  /* h1 */
+  .xxxl {
+    font-family: var(--primary-font);
+    font-size: clamp(2.5rem, 6vw, var(--size-xxl));
+    font-weight: 600; /* stays semibold */
+    letter-spacing: var(--letter-spacing);
+    line-height: clamp(1em, 5vw, var(--size-xxl));
+    text-transform: uppercase;
+  }
+  
+  /* h2 */
+  .xxl {
+    font-size: clamp(2.5rem, 5vw, var(--size-xl));
+    font-weight: 600; /* stays semibold */
+    letter-spacing: var(--letter-spacing);
+    line-height: clamp(2.5rem, 4vw, var(--size-xl));
+  }
+  
+  /* h3 */
+  .xl {
+    font-size: clamp(var(--size-md), 4vw, 3rem);
+    font-weight: 400; /* regular on sm | semiBold on md+ */
+    letter-spacing: var(--letter-spacing);
+    line-height: clamp(1.5rem, 3.5vw, 1em);
+    text-transform: uppercase;
+  }
+  
+  /* h4 */
+  .lg {
+    font-size: clamp(1.5rem, 3.5vw, var(--size-md));
+    font-weight: 400; /* stays regular */
+    letter-spacing: 0;
+    line-height: clamp(var(--size-md), 3vw, 2.5rem);
+  }
+  
+  /* h5 && h6 */
+  .md {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-weight: 600; /* stays semibold */
+    letter-spacing: 0;
+    line-height: clamp(var(--size-md), 2vw, 2.5rem);
+  }
+  
+  /* h6 */
+  .light {
+    font-weight: 400; /* stays regular */
+  }
+  
+  /* p */
+  .sm {
+    font-size: clamp(var(--size-sm), 2.5vw, 1.125rem);
+    font-weight: 400; /* stays regular */
+    letter-spacing: 0;
+    line-height: clamp(1.5rem, 2.5vw, var(--size-md));
+  }
+  
+  /* p:has(time) */
+  .subtext,
+  .xs
+   {
+    font-size: var(--size-sm);
+    font-weight: 400; /* stays regular */
+    letter-spacing: var(--letter-spacing);
+    line-height: 1.5rem;
+    font-family: var(--secondary-font);
+  }
+  
+  
+  
+  time::after {
+    content: "/";
+    padding: 0 0.5rem;
+  }
+  
+  .label {
+    font-size: var(--size-sm);
+    font-family: var(--secondary-font);
+    font-weight: 300;
+    letter-spacing: -0.06em;
+    border: 1px solid var(--black);
+    text-transform: uppercase;
+    padding: 0 4px;
+  }
+  
+  .neutral {
+    font-weight: 400;
+  }
+  
+  .semi-bold {
+    font-weight: 600;
+  }
+  
+  .bold {
+    font-weight: 700;
+  }
+  
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  a {
+    color: var(--blue);
+    text-decoration: none;
+    position: relative;
+    font-family: var(--secondary-font);
+    text-transform: uppercase;
+    svg > path {
+      stroke: var(--blue);
+    }
+  }
+  
+  /* Formulier elementen */
+  

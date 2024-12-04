@@ -1,0 +1,135 @@
+/* vacancy block */
+/* ? ombouwen naar grid ? */
+.vacancy-block {
+  margin-left: -16px;
+  margin-right: -16px;
+  /* @media (min-width: 769px) {
+      margin-left: -48px;
+      margin-right: -48px;
+    } */
+  border: 1px solid var(--black);
+  border-width: 1px 0;
+  padding: 0 1rem;
+  flex-direction: column;
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem 0 2rem 0;
+    h3 {
+      grid-column: 1 / 5;
+    }
+    .data {
+      font-family: var(--secondary-font);
+      grid-column: span 8;
+      height: 100%;
+      display: flex;
+      /* justify-content: space-between; */
+      align-items: center;
+      gap: 1rem;
+      p,
+      a {
+        display: inline-block;
+        width: 20%;
+        text-transform: uppercase;
+        width: fit-content;
+      }
+      > p {
+        margin-right: auto;
+      }
+      .group {
+        gap: 1rem 0;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        > * {
+          overflow-wrap: break-word;
+          hyphens: auto;
+          min-width: 125px;
+          max-width: 33%;
+          width: 100%;
+        }
+      }
+      a {
+        align-items: center;
+        display: flex;
+        gap: 0.5rem;
+      }
+      @media (max-width: 800px) {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+  }
+  li + li {
+    border-top: 1px solid var(--black);
+  }
+}
+/* end of vacancy block */
+@media screen and (min-width: 660px) {
+  .vacancy-block {
+    margin-left: -48px;
+    margin-right: -48px;
+
+    li {
+      .data {
+        > .group {
+          width: 60%;
+          > * {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1180px) {
+  /* vacancy block */
+  /* ? ombouwen naar grid ? */
+  .vacancy-block {
+    border: 1px solid var(--black);
+    border-width: 1px 0;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: subgrid;
+    flex-direction: column;
+    li {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: 1 / -1;
+      padding: 2.5rem 0 2rem 0;
+      align-items: center;
+      /* ??? */
+      /* change this */
+      h3 {
+        grid-column: 1 / 5;
+      }
+      .data {
+        font-family: var(--secondary-font);
+        grid-column: span 8;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        .group {
+          width: 60%;
+        }
+        p,
+        a {
+          width: 20%;
+          text-transform: uppercase;
+        }
+        a {
+          display: flex;
+          gap: 0.5rem;
+          justify-content: end;
+        }
+      }
+    }
+    li + li {
+      border-top: 1px solid var(--black);
+    }
+  }
+  /* end of vacancy block */
+}

@@ -1,0 +1,37 @@
+.cta-block{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    > * {
+        width: fit-content;
+    }
+    label{
+        pointer-events:none;
+        position: relative;
+        z-index: 1;
+        transition: .3s ease-in-out;
+        color: var(--grey);
+        &:focus-within{
+            color: transparent;
+        }
+        input{
+            pointer-events: all;
+            border-width: 0 0 1px 0;
+            padding: 5px;
+            z-index: -1;
+            left: 0;
+            top: calc(1ch + 11px);
+            position: absolute;
+            width: 304px;
+
+        }
+    }
+    
+}
+@media screen and (min-width: 660px) {
+}
+@media screen and (min-width: 1180px) {
+}

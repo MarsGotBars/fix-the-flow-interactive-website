@@ -1,0 +1,98 @@
+/* events block */
+.events-block {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--black);
+  border-width: 1px 0;
+  margin-left: -16px;
+  margin-right: -16px;
+  > div {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--black);
+    gap: 2rem;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+    article {
+      margin-bottom: 3.5rem;
+      /* alle child elementen met een neighbor in de div behalve de laatste */
+      > * + *:not(:last-child) {
+        margin: 1rem 0;
+      }
+    }
+    a {
+      width: fit-content;
+    }
+  }
+  ul {
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    h3 {
+      text-transform: none;
+    }
+    li {
+      height: fit-content;
+      margin-bottom: 32px;
+      > *:not(:first-child):not(:last-child) {
+        margin: 1rem 0;
+      }
+      div {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem 0;
+        p {
+          display: flex;
+          flex-wrap: wrap;
+          margin-right: 100px;
+        }
+      }
+    }
+    li:last-child {
+      margin: 0;
+    }
+    li + li {
+      padding-top: 2rem;
+      border-top: 1px solid var(--black);
+    }
+  }
+}
+/* end of events block */
+@media screen and (min-width: 660px) {
+  .events-block {
+    margin-left: -48px;
+    margin-right: -48px;
+    ul {
+      padding: 3rem;
+    }
+    > div {
+      flex-direction: row;
+      padding: 3rem;
+      img {
+        width: 50%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1180px) {
+  .events-block {
+    flex-direction: row;
+    > div {
+      padding: 3.375rem;
+      gap: 0;
+      flex-direction: column;
+      border-bottom: 0;
+      border-right: 1px solid var(--black);
+      max-width: 30rem;
+      img {
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}

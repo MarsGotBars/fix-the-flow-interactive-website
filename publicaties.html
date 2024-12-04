@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/general.css" />
+    <link rel="stylesheet" href="./styles/components/filters.css" />
+    <link
+      rel="preload"
+      href="https://julesbruins.github.io/look-and-feel-styleguide/dda-gezamenlijk.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+      crossorigin
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://julesbruins.github.io/look-and-feel-styleguide/dda-gezamenlijk.css"
+      />
+    </noscript>
+    <script src="./scripts/script.js" defer></script>
+    <title>PUBLICATIES | DDA</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <div class="overlay"></div>
+          <a href="./">
+            <img
+              src="./assets/icons/logo.svg"
+              alt="Dutch Digital Agencies logo"
+            />
+          </a>
+          <a
+            href="#footer-menu"
+            class="burger"
+            aria-expanded="false"
+            aria-controls="nav-items"
+            >menu<span class="lines"></span><span class="lines"></span
+            ><span class="lines"></span
+          ></a>
+          <div class="nav-items subtext">
+            <ul>
+              <li><a href="">over ons</a></li>
+              <li><a href="">events</a></li>
+              <li><a href="./publicaties.html">publicaties</a></li>
+              <li><a href="">leden</a></li>
+              <li>
+                <a href="">vacatures <span>54</span></a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <a class="link blue" href=""
+                  >inloggen
+                  <div class="blue"></div
+                ></a>
+              </li>
+              <li>
+                <a class="btn" href="">
+                  <p>word lid</p>
+                  <div></div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section class="content-block">
+          <h1 class="xxxl">Publicaties</h1>
+        </section>
+        <form>
+          <details class="btn" name="filter">
+            <summary>
+              onderwerp(multiple)
+            </summary>
+            <div>
+              <label>
+                optie 1
+                <input type="checkbox" />
+              </label>
+              <label>
+                optie 2
+                <input type="checkbox" />
+              </label>
+              <label>
+                optie 3
+                <input type="checkbox" />
+              </label>
+            </div>
+          </details>
+          <details class="btn" name="filter">
+            <div></div>
+            <summary>datum</summary>
+            <div>
+              <input name="date" id="optie1" type="radio" /><label for="optie1"
+                >optie 1</label
+              >
+              <input name="date" id="optie2" type="radio" /><label for="optie2"
+                >optie 2</label
+              >
+              <input name="date" id="optie3" type="radio" /><label for="optie3"
+                >optie 3</label
+              >
+            </div>
+          </details>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
