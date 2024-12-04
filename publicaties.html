@@ -73,26 +73,40 @@
           <h1 class="xxxl">Publicaties</h1>
         </section>
         <form>
-          <div class="filter">
-            <details class="btn" name="filter">
-              <summary>datum</summary>
-              <div>
-                <input name="date" id="optie1" type="radio" /><label
-                  for="optie1"
-                  >optie 1</label
-                >
-                <input name="date" id="optie2" type="radio" /><label
-                  for="optie2"
-                  >optie 2</label
-                >
-                <input name="date" id="optie3" type="radio" /><label
-                  for="optie3"
-                  >optie 3</label
-                >
-              </div>
-            </details>
+          <details class="btn" name="filter">
+            <summary>
+              onderwerp(multiple)
+            </summary>
+            <div>
+              <label>
+                optie 1
+                <input type="checkbox" />
+              </label>
+              <label>
+                optie 2
+                <input type="checkbox" />
+              </label>
+              <label>
+                optie 3
+                <input type="checkbox" />
+              </label>
+            </div>
+          </details>
+          <details class="btn" name="filter">
             <div></div>
-          </div>
+            <summary>datum</summary>
+            <div>
+              <input name="date" id="optie1" type="radio" /><label for="optie1"
+                >optie 1</label
+              >
+              <input name="date" id="optie2" type="radio" /><label for="optie2"
+                >optie 2</label
+              >
+              <input name="date" id="optie3" type="radio" /><label for="optie3"
+                >optie 3</label
+              >
+            </div>
+          </details>
         </form>
       </main>
     </div>
