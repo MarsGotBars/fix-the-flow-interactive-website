@@ -116,6 +116,10 @@ form {
 }
 
 .btn {
+  &:active{
+    background: var(--important);
+    border-style: dotted;
+  }
   align-items: center;
   background: var(--white);
   display: flex;
