@@ -146,7 +146,7 @@ form {
     position: relative;
 
     /* Only apply the ::after when the element is NOT inside a <details> */
-    &:not(> details) {
+    &:not(details) {
       &::after {
         content: "";
         background: var(--black);
