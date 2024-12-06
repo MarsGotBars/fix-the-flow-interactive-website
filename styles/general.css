@@ -28,6 +28,13 @@ body {
   min-height: 200vh;
 }
 
+input, a, button, summary{
+  &:focus-within{
+    /* maybe change this to important instead? the blue is easy to see though */
+    outline: var(--blue) thick dotted;
+  }
+}
+
 .overlay {
   top: 0;
   left: 0;
@@ -44,6 +51,7 @@ body {
 }
 
 a {
+  height: fit-content;
   color: var(--blue);
   text-decoration: none;
   position: relative;
