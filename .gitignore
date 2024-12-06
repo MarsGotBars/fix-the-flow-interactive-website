@@ -1,4 +1,3 @@
 
 .vscode/settings.json
-# how do I ignore this :(
-.styles/components/css-template.css
+styles/components/css-template.css
