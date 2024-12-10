@@ -1,0 +1,38 @@
+.pub-list {
+    border: 1px solid var(--black);
+    border-width: 0 1px;
+    display: grid;
+    place-content: center;
+  }
+  
+  .pub-list li {
+    display: none;
+    transition: 0.3s ease-in-out allow-discrete;
+    background: var(--important);
+    transform: translateX(100%);
+    will-change: transform, opacity;
+  }
+
+  @starting-style li {
+    display: block;
+    opacity: 1;
+    background: red;
+  }
+  
+  .pub-list.reveal {
+    @starting-style li {
+      display: block;
+      background: transparent;
+      transform: translateX(0);
+      opacity: 0;
+    }
+  }
+  
+  .pub-list.reveal li {
+    display: block;
+    opacity: 1;
+  }
+@media screen and (min-width: 660px) {
+}
+@media screen and (min-width: 1180px) {
+}

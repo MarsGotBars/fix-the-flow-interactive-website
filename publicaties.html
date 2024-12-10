@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/general.css" />
     <link rel="stylesheet" href="./styles/components/filters.css" />
-    <link rel="stylesheet" href="./styles/components/cards-block.css">
-    <link rel="stylesheet" href="./styles/offline.css">
+    <link rel="stylesheet" href="./styles/components/pub-listing.css">
+    <link rel="stylesheet" href="./styles/components/cards-block.css" />
+    <link rel="stylesheet" href="./styles/offline.css" />
     <link
       rel="preload"
       href="https://raw.githubusercontent.com/julesbruins/look-and-feel-styleguide/main/fonts/Archivo-VariableFont.woff2"
@@ -178,21 +179,31 @@
           <details class="btn" name="filter">
             <summary>onderwerp</summary>
             <div>
-              <input name="onderwerpOptie" id="onderwerpOptie1" type="radio" /><label for="onderwerpOptie1"
-                >optie 1</label
-              >
-              <input name="onderwerpOptie" id="onderwerpOptie2" type="radio" /><label for="onderwerpOptie2"
-                >optie 2</label
-              >
-              <input name="onderwerpOptie" id="onderwerpOptie3" type="radio" /><label for="onderwerpOptie3"
-                >optie 3</label
-              >
-              <input name="onderwerpOptie" id="onderwerpOptie4" type="radio" /><label for="onderwerpOptie4"
-                >grote lange optie 4</label
-              >
-              <input name="onderwerpOptie" id="onderwerpOptie5" type="radio" /><label for="onderwerpOptie5"
-                >nieuwbouwkeuken inzetten</label
-              >
+              <input
+                name="onderwerpOptie"
+                id="onderwerpOptie1"
+                type="radio"
+              /><label for="onderwerpOptie1">optie 1</label>
+              <input
+                name="onderwerpOptie"
+                id="onderwerpOptie2"
+                type="radio"
+              /><label for="onderwerpOptie2">optie 2</label>
+              <input
+                name="onderwerpOptie"
+                id="onderwerpOptie3"
+                type="radio"
+              /><label for="onderwerpOptie3">optie 3</label>
+              <input
+                name="onderwerpOptie"
+                id="onderwerpOptie4"
+                type="radio"
+              /><label for="onderwerpOptie4">grote lange optie 4</label>
+              <input
+                name="onderwerpOptie"
+                id="onderwerpOptie5"
+                type="radio"
+              /><label for="onderwerpOptie5">nieuwbouwkeuken inzetten</label>
             </div>
           </details>
         </form>
@@ -200,9 +211,11 @@
           <p>laat em zien!</p>
           <div></div>
         </button>
-        <article class="pub-listing">hoi ik ben nieuw hier!</article>
-        <article class="pub-listing">hoi ik ben nieuw hier!</article>
-        <article class="pub-listing">hoi ik ben nieuw hier!</article>
+        <ul class="pub-list">
+          <li>test1 hoi ik ben nieuw hier!</li>
+          <li>test2 hoi ik ben nieuw hier!</li>
+          <li>test3 hoi ik ben nieuw hier!</li>
+        </ul>
       </main>
     </div>
   </body>
