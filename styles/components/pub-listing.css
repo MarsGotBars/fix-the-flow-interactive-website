@@ -1,36 +1,33 @@
 .pub-list {
     border: 1px solid var(--black);
     border-width: 0 1px;
-    display: grid;
-    place-content: center;
+    height: auto;
+    overflow-x: hidden;
+    will-change: height;
   }
   
   .pub-list li {
-    display: none;
-    transition: 0.3s ease-in-out allow-discrete;
+    position: relative;
+    width: fit-content;
     background: var(--important);
-    transform: translateX(100%);
-    will-change: transform, opacity;
-  }
-
-  @starting-style li {
-    display: block;
-    opacity: 1;
-    background: red;
-  }
-  
-  .pub-list.reveal {
-    @starting-style li {
-      display: block;
-      background: transparent;
-      transform: translateX(0);
-      opacity: 0;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--white);
+        transform: translateX(0);
+        transition: transform .3s ease;
+        will-change: transform;
     }
   }
   
-  .pub-list.reveal li {
-    display: block;
-    opacity: 1;
+  .pub-list li.displayed {
+    &::after{
+        transform : translateX(100%)
+    }
   }
 @media screen and (min-width: 660px) {
 }

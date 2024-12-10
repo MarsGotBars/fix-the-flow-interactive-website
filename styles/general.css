@@ -180,7 +180,7 @@ button{
   color: var(--black);
   &:hover{
     color: var(--blue);
-    transition: .3s ease;
+    transition: color .3s ease;
   }
 }
 
@@ -677,17 +677,4 @@ time {
 
 p.label {
   display: inline-block;
-}
-
-.pub-listing:nth-of-type(n+2){
-  display: none;
-  .loaded{
-    display: block;
-  }
-}
-::view-transition-old(.pub-listing){
-  animation: 2s ease;
-}
-::view-transition-new(.pub-listing){
-  animation: 2s ease;
 }
