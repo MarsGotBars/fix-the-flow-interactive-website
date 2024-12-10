@@ -14,13 +14,8 @@
 ::view-transition-new(root) {
   animation: 2s page-in ease;
 }
-div.transition{
-  position: fixed;
-  height: 1px;
-  width: calc(100% - 2rem);
-  bottom: 0;
-  left: 1rem;
-  background: var(--black);
+header{
+  view-transition-name: header;
 }
 @keyframes page-out {
   0% {
@@ -556,8 +551,8 @@ maar dit zorgt er wel voor dat de scroll header op elke browser werkt :)
     background: var(--black);
     position: absolute;
     z-index: -1;
-    top: 50%;
-    height: 50%;
+    top: 0;
+    height: calc(100vh - 2rem);
     width: 1px;
   }
   header::before {
@@ -681,4 +676,11 @@ time {
 
 p.label {
   display: inline-block;
+}
+
+.pub-listing:nth-of-type(n+2){
+  display: none;
+  .loaded{
+    display: block;
+  }
 }
