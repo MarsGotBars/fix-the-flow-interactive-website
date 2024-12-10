@@ -8,6 +8,36 @@
   navigation: auto;
 }
 
+::view-transition-old(root) {
+  animation: 2s page-out ease;
+}
+::view-transition-new(root) {
+  animation: 2s page-in ease;
+}
+div.transition{
+  position: fixed;
+  height: 1px;
+  width: calc(100% - 2rem);
+  bottom: 0;
+  left: 1rem;
+  background: var(--black);
+}
+@keyframes page-out {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes page-in {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 html {
   scroll-behavior: smooth;
   min-height: 100vh;
@@ -81,7 +111,7 @@ a {
   justify-content: end;
   font-weight: 700;
   gap: 0.5rem;
-  transition: .5s ease;
+  transition: 0.5s ease;
   &:has(.blue):hover {
     color: var(--black);
     div {
@@ -119,13 +149,13 @@ a {
   justify-content: end;
   font-weight: 700;
   gap: 0.5rem;
-  &:not(.blue):hover{
+  &:not(.blue):hover {
     color: var(--black);
-    > div::after{
+    > div::after {
       background: var(--black);
     }
   }
-> div {
+  > div {
     height: 1.125rem;
     aspect-ratio: 1;
     &::after {
@@ -149,6 +179,14 @@ a {
 form {
   display: flex;
 }
+button{
+  width: fit-content;
+  color: var(--black);
+  &:hover{
+    color: var(--blue);
+    transition: .3s ease;
+  }
+}
 
 .btn {
   &:active {
@@ -162,8 +200,8 @@ form {
   color: var(--black);
   border: 1px solid var(--black);
   stroke: initial;
-  &:not(.blue):hover{
-    > div::after{
+  &:not(.blue):hover {
+    > div::after {
       background: var(--blue);
     }
   }
@@ -175,7 +213,7 @@ form {
   }
   span {
     border-right: 1px solid var(--black);
-    padding: .875rem 1rem;
+    padding: 0.875rem 1rem;
     height: 100%;
   }
   div {
@@ -207,7 +245,7 @@ form {
   p {
     white-space: nowrap;
     border-right: 1px solid var(--black);
-    padding: .875rem 1rem;
+    padding: 0.875rem 1rem;
     height: 100%;
   }
   cursor: pointer;
@@ -233,6 +271,7 @@ main > * {
 }
 
 main {
+  overflow: hidden;
   grid-auto-rows: max-content;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -366,7 +405,7 @@ header img {
 nav {
   position: relative;
   height: 5rem;
-  padding: .75rem .875rem;
+  padding: 0.75rem 0.875rem;
   background: var(--white);
   display: flex;
   justify-content: space-between;
