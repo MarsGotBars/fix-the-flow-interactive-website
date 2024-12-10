@@ -28,8 +28,11 @@ body {
   min-height: 200vh;
 }
 
-input, a, button, summary{
-  &:focus-within{
+input,
+a,
+button,
+summary {
+  &:focus-within {
     /* maybe change this to important instead? the blue is easy to see though */
     outline: var(--blue) thick dotted;
   }
@@ -57,8 +60,14 @@ a {
   position: relative;
   font-family: var(--secondary-font);
   text-transform: uppercase;
+  transition: 0.2s ease;
   svg > path {
     stroke: var(--blue);
+  }
+  /* placeholder */
+  &:hover {
+    color: var(--blue);
+    /* transform: skewX(5deg); */
   }
 }
 /*! .arrow {
@@ -71,10 +80,20 @@ a {
   justify-content: end;
   font-weight: 700;
   gap: 0.5rem;
+  transition: .5s ease;
+  &:has(.blue):hover {
+    color: var(--black);
+    div {
+      &::after {
+        background: var(--black);
+      }
+    }
+  }
   div {
     height: 18px;
     aspect-ratio: 1;
     &::after {
+      transition: 0.5s ease;
       content: "";
       background: var(--black);
       position: absolute;
@@ -99,7 +118,13 @@ a {
   justify-content: end;
   font-weight: 700;
   gap: 0.5rem;
-  div {
+  &:not(.blue):hover{
+    color: var(--black);
+    > div::after{
+      background: var(--black);
+    }
+  }
+> div {
     height: 18px;
     aspect-ratio: 1;
     &::after {
@@ -125,7 +150,7 @@ form {
 }
 
 .btn {
-  &:active{
+  &:active {
     background: var(--important);
     border-style: dotted;
   }
@@ -136,6 +161,11 @@ form {
   color: var(--black);
   border: 1px solid var(--black);
   stroke: initial;
+  &:not(.blue):hover{
+    > div::after{
+      background: var(--blue);
+    }
+  }
   &:not(details) {
     > * {
       display: grid;
@@ -284,6 +314,7 @@ main {
     margin-top: 1rem;
   }
   &:has(h1) {
+    /* aanpassen */
     margin-bottom: 8.125rem;
     > div {
       margin-top: 1.5rem;
@@ -385,6 +416,15 @@ nav {
             font-weight: 400;
             color: var(--blue);
             gap: 0.5rem;
+            &:hover {
+              color: var(--black);
+              ::after {
+                background: var(--black);
+              }
+            }
+          }
+          &:hover {
+            color: var(--blue);
           }
           &.active {
             color: var(--blue);
