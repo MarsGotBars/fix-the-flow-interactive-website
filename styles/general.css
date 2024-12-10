@@ -15,6 +15,7 @@
   animation: 2s page-in ease;
 }
 header{
+  /* exclude this from the page transition */
   view-transition-name: header;
 }
 @keyframes page-out {
@@ -683,4 +684,10 @@ p.label {
   .loaded{
     display: block;
   }
+}
+::view-transition-old(.pub-listing){
+  animation: 2s ease;
+}
+::view-transition-new(.pub-listing){
+  animation: 2s ease;
 }

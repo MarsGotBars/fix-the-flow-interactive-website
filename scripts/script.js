@@ -4,6 +4,7 @@ const nav = document.querySelector("nav");
 const header = document.querySelector("header")
 const burger = document.querySelector(".burger");
 const overlay = document.querySelector(".overlay");
+const hiddenArticles = document.querySelectorAll(".pub-listing:not(:first-of-type)")
 let isScrolled = false;
 
 const OpenBurger = (e) => {
@@ -38,3 +39,22 @@ observer.observe(nav)
 // pointer event mouse tracking
 
 // buiten het menu klikken moet dit sluiten
+
+// view transitioning
+const exampleButton = document.querySelector('button.btn');
+console.log(exampleButton);
+exampleButton && exampleButton.addEventListener('click', () => {
+  document.startViewTransition && document.startViewTransition((e) => loadArticles(e));
+})
+
+function loadArticles(e){
+  console.log('loadArticles fired', e);
+  // zorgt ervoor dat de event in de log hierboven undefined is
+  e.preventDefault
+  hiddenArticles.forEach(article => {
+    article.classList.add('loaded')
+    // Ik zie dat dit stuk wel goed verloopt, de elementen krijgen de classes ik ze toewijs
+    console.log(article, article.classList);
+    
+  });
+}
