@@ -47,7 +47,7 @@ revealBtn.addEventListener("click", () => {
   console.log(pubItems);
   for (let i = 0; i < pubItems.length; i++) {
     setTimeout(() => {
-      pubItems[i].classList.add('displayed')
+      pubItems[i].classList.toggle('displayed')
     }, 300 * i);
   }
 });

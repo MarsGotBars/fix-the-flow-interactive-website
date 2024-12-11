@@ -3,7 +3,7 @@
     border-width: 0 1px;
     height: auto;
     overflow-x: hidden;
-    will-change: height;
+    /* will-change: height; */
   }
   
   .pub-list li {
@@ -19,7 +19,7 @@
         height: 100%;
         background: var(--white);
         transform: translateX(0);
-        transition: transform .3s ease;
+        transition: transform .3s ease-in;
         will-change: transform;
     }
   }

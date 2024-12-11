@@ -9,10 +9,10 @@
 }
 
 ::view-transition-old(root) {
-  animation: 2s page-out ease;
+  animation: .7s page-out ease-in;
 }
 ::view-transition-new(root) {
-  animation: 2s page-in ease;
+  animation: .7s page-in ease-out;
 }
 header{
   /* exclude this from the page transition */
