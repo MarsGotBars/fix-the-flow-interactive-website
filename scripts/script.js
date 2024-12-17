@@ -49,7 +49,7 @@ const observer = new window.IntersectionObserver(handler, options);
 observer.observe(nav);
 
 // pub listing
-const revealBtn = document.querySelector("button.btn");
+const revealBtn = document.querySelector("button.revealer");
 let initialBool = true;
 let pubItems = document.querySelectorAll(".pub-list>li:not(.displayed)");
 // check if the element exists and then add the event listener (avoids errors and unnecessary code)
