@@ -119,14 +119,16 @@ footer {
 }
 @media screen and (min-width: 1180px) {
   footer {
-    .bulk-block {
-      grid-column: 1 / 7;
-    }
-    #footer-menu {
-      grid-column: 7 / 10;
-    }
-    address {
-      grid-column: 10 / 13;
+    .wrapper {
+      .bulk-block {
+        grid-column: 1 / 7;
+      }
+      #footer-menu {
+        grid-column: 7 / 10;
+      }
+      address {
+        grid-column: 10 / 13;
+      }
     }
   }
 }
