@@ -17,8 +17,6 @@ mailInputs.forEach((input) => {
 let isScrolled = false;
 
 const OpenBurger = (e) => {
-  console.log(e.target, "hoi");
-
   e.preventDefault();
   overlay.classList.toggle("open");
   navItems.classList.toggle("open");
@@ -104,5 +102,4 @@ function handleEvent(e) {
     navItems.classList.remove("open");
     burger.classList.remove("open");
   }
-  console.log(touchEvent);
 }
