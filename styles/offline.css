@@ -55,7 +55,7 @@
   
   /* h3 */
   .xl {
-    font-size: clamp(var(--size-md), 4vw, 3rem);
+    font-size: clamp(var(--size-md), 4vw, var(--size-lg));
     font-weight: 400; /* regular on sm | semiBold on md+ */
     letter-spacing: var(--letter-spacing);
     line-height: clamp(1.5rem, 3.5vw, 1em);
@@ -102,13 +102,6 @@
     font-family: var(--secondary-font);
   }
   
-  
-  
-  time::after {
-    content: "/";
-    padding: 0 0.5rem;
-  }
-  
   .label {
     font-size: var(--size-sm);
     font-family: var(--secondary-font);
@@ -116,7 +109,7 @@
     letter-spacing: -0.06em;
     border: 1px solid var(--black);
     text-transform: uppercase;
-    padding: 0 4px;
+    padding: 0 .25rem;
   }
   
   .neutral {

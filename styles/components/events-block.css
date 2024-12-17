@@ -4,14 +4,14 @@
   flex-direction: column;
   border: 1px solid var(--black);
   border-width: 1px 0;
-  margin-left: -16px;
-  margin-right: -16px;
+  margin-left: -1rem;
+  margin-right: -1rem;
   > div {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid var(--black);
-    gap: 2rem;
+    gap: var(--size-md);
     img {
       width: 100%;
       object-fit: cover;
@@ -37,7 +37,7 @@
     }
     li {
       height: fit-content;
-      margin-bottom: 32px;
+      margin-bottom: var(--size-md);
       > *:not(:first-child):not(:last-child) {
         margin: 1rem 0;
       }
@@ -57,7 +57,7 @@
       margin: 0;
     }
     li + li {
-      padding-top: 2rem;
+      padding-top: var(--size-md);
       border-top: 1px solid var(--black);
     }
   }
@@ -65,14 +65,14 @@
 /* end of events block */
 @media screen and (min-width: 660px) {
   .events-block {
-    margin-left: -48px;
-    margin-right: -48px;
+    margin-left: -3rem;
+    margin-right: -3rem;
     ul {
-      padding: 3rem;
+      padding: var(--size-lg);
     }
     > div {
       flex-direction: row;
-      padding: 3rem;
+      padding: var(--size-lg);
       img {
         width: 50%;
       }

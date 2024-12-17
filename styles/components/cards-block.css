@@ -1,11 +1,19 @@
 .cards-block {
   border: 1px solid var(--black);
   border-width: 1px 0;
-  margin-left: -16px;
-  margin-right: -16px;
-  @media (min-width: 660px){
-    margin-left: -48px;
-    margin-right: -48px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  &.optional-spacing {
+    &.bottom {
+      margin-bottom: 0;
+    }
+    &.top {
+      margin-top: 0;
+    }
+  }
+  @media (min-width: 660px) {
+    margin-left: -3rem;
+    margin-right: -3rem;
   }
   display: flex;
   flex-direction: column;
@@ -25,7 +33,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: var(--size-sm);
       * {
         width: fit-content;
       }
@@ -34,7 +42,7 @@
         width: 100%;
         display: flex;
         justify-content: flex-end;
-        min-height: 4rem;
+        min-height: var(--size-xl);
       }
     }
     &:not(:last-child) {
@@ -57,7 +65,7 @@
     flex-direction: row;
     padding: 0;
     article {
-      padding: 3rem;
+      padding: var(--size-lg);
       max-width: 33.33%;
       flex-direction: column;
       grid-column: span 4;
@@ -66,7 +74,7 @@
         border-right: 1px solid var(--black);
       }
       div > div {
-        min-height: 4rem;
+        min-height: var(--size-xl);
       }
     }
   }

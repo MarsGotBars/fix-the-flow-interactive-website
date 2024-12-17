@@ -1,21 +1,17 @@
 /* vacancy block */
 /* ? ombouwen naar grid ? */
 .vacancy-block {
-  margin-left: -16px;
-  margin-right: -16px;
-  /* @media (min-width: 769px) {
-      margin-left: -48px;
-      margin-right: -48px;
-    } */
+  margin-left: -1rem;
+  margin-right: -1rem;
   border: 1px solid var(--black);
   border-width: 1px 0;
-  padding: 0 1rem;
+  padding: 0 var(--size-sm);
   flex-direction: column;
   li {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 2.5rem 0 2rem 0;
+    gap: var(--size-sm);
+    padding: 2.5rem 0 var(--size-md) 0;
     h3 {
       grid-column: 1 / 5;
     }
@@ -26,7 +22,7 @@
       display: flex;
       /* justify-content: space-between; */
       align-items: center;
-      gap: 1rem;
+      gap: var(--size-sm);
       p,
       a {
         display: inline-block;
@@ -38,7 +34,7 @@
         margin-right: auto;
       }
       .group {
-        gap: 1rem 0;
+        gap: var(--size-sm) 0;
         display: flex;
         width: 100%;
         flex-wrap: wrap;
@@ -68,8 +64,8 @@
 /* end of vacancy block */
 @media screen and (min-width: 660px) {
   .vacancy-block {
-    margin-left: -48px;
-    margin-right: -48px;
+    margin-left: -3rem;
+    margin-right: -3rem;
 
     li {
       .data {
@@ -89,7 +85,7 @@
   .vacancy-block {
     border: 1px solid var(--black);
     border-width: 1px 0;
-    padding: 0 3rem;
+    padding: 0 var(--size-lg);
     display: grid;
     grid-template-columns: subgrid;
     flex-direction: column;
@@ -97,7 +93,7 @@
       display: grid;
       grid-template-columns: subgrid;
       grid-column: 1 / -1;
-      padding: 2.5rem 0 2rem 0;
+      padding: 2.5rem 0 var(--size-md) 0;
       align-items: center;
       /* ??? */
       /* change this */
@@ -111,7 +107,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 2rem;
+        gap: var(--size-md);
         .group {
           width: 60%;
         }
