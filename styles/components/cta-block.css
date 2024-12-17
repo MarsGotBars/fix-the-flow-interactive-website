@@ -1,37 +1,79 @@
-.cta-block{
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0 12px;
+.cta-block {
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  form {
+    width: 100%;
+    gap: 2.5rem;
+    flex-direction: column;
+    button {
+      margin: 0 auto;
+    }
+  }
+  label {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    > * {
-        width: fit-content;
+    cursor: text;
+    position: relative;
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+    color: var(--grey);
+    &:focus-within {
+      color: var(--blue);
     }
-    label{
-        pointer-events:none;
-        position: relative;
-        z-index: 1;
-        transition: .3s ease-in-out;
-        color: var(--grey);
-        &:focus-within{
-            color: transparent;
-        }
-        input{
-            pointer-events: all;
-            border-width: 0 0 1px 0;
-            padding: 5px;
-            z-index: -1;
-            left: 0;
-            top: calc(1ch + 11px);
-            position: absolute;
-            width: 304px;
-
-        }
+    input {
+      pointer-events: all;
+      border-width: 0 0 1px 0;
+      padding: 5px;
+      z-index: -1;
+      width: 100%;
+      background: transparent;
+      outline-color: transparent;
+      transition: outline-color 0.3s ease;
+      &:user-invalid {
+        outline-color: var(--warning);
+        animation: 0.3s aaa ease-in-out;
+        animation-iteration-count: 2;
+      }
     }
-    
+  }
+}
+@keyframes aaa {
+  from {
+    background: var(--white);
+  }
+  to {
+    background: var(--warning);
+  }
 }
 @media screen and (min-width: 660px) {
+  .cta-block {
+    width: fit-content;
+  }
+  label {
+    min-width: 304px;
+  }
+  form {
+    justify-content: space-between;
+    width: 100%;
+  }
 }
+
 @media screen and (min-width: 1180px) {
+  .cta-block {
+    width: 100%;
+    margin: 0;
+    justify-content: space-between;
+    flex-direction: row;
+    form {
+      width: 50%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 }

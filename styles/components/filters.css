@@ -1,8 +1,6 @@
 form{
   display: flex;
   gap: 1rem;
-  /* ! temp */
-  height: 200px;
 }
 
 details {
@@ -73,6 +71,7 @@ details.btn {
   max-height: 48px;
 
   div {
+    z-index: 10;
     background: var(--white);
     padding: 4px 0;
     height: auto;
@@ -104,7 +103,7 @@ details.btn {
       height: 0;
       width: 0;
       &:checked + label, &:focus + label {
-        outline: var(--blue) dotted thick;
+        outline: var(--blue) dotted thin;
         font-weight: 700;
         color: var(--blue);
       }

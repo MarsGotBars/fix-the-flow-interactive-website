@@ -5,13 +5,23 @@ const header = document.querySelector("header");
 const burger = document.querySelector(".burger");
 const overlay = document.querySelector(".overlay");
 const publications = document.querySelector(".pub-list");
-let pubItems = document.querySelectorAll(".pub-list>li:not(.displayed)");
+const mailInputs = document.querySelectorAll("input[type='email']")
+
+// In het geval van meerdere inputs
+mailInputs.forEach((input) => {
+  input.addEventListener('invalid', ()=>{
+    input.setCustomValidity("Incorrect mail adres");
+  })
+});
+
+
 let isScrolled = false;
 
 const OpenBurger = (e) => {
   e.preventDefault();
   overlay.classList.toggle("open");
   navItems.classList.toggle("open");
+  burger.classList.toggle("open")
 };
 burger.addEventListener("click", OpenBurger);
 
@@ -43,7 +53,9 @@ observer.observe(nav);
 
 // pub listing
 const revealBtn = document.querySelector("button.btn");
-revealBtn.addEventListener("click", () => {
+let pubItems = document.querySelectorAll(".pub-list>li:not(.displayed)");
+
+revealBtn && revealBtn.addEventListener("click", () => {
   console.log(pubItems);
   for (let i = 0; i < pubItems.length; i++) {
     setTimeout(() => {
