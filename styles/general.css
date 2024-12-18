@@ -543,6 +543,7 @@ nav:not(#footer-menu) {
     border: 1px solid var(--black);
 
     .lines {
+      pointer-events: none;
       background: var(--blue);
       display: block;
       background: var(--black);
