@@ -733,7 +733,7 @@ time {
 
 ::selection {
   background-color: var(--important);
-  color: var(--white);
+  color: var(--blue);
 }
 
 p.label {
