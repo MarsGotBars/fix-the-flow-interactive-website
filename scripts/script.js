@@ -15,12 +15,18 @@ mailInputs.forEach((input) => {
 });
 
 let isScrolled = false;
+// inert application
+const screenSize = window.matchMedia('(max-width: 1024px)')
+const mainElement = document.querySelector('main')
 
 const OpenBurger = (e) => {
   e.preventDefault();
   overlay.classList.toggle("open");
   navItems.classList.toggle("open");
   burger.classList.toggle("open");
+  if(screenSize.matches){
+    mainElement.toggleAttribute('inert')
+  }
 };
 burger.addEventListener("click", OpenBurger);
 
